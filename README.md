@@ -7,5 +7,8 @@ Some solutions (and some comments) are also based on the books:
 - Stephen Prata, "C++ Primer Plus", 6th edition (2012).
 
 Each chapter has a folder with some codes, comments, and tests.
-All codes were developed on CLion IDE.
+All codes were developed on VSC IDE.
+
+
+Base on  hisamuka/a-tour-of-cpp
 
