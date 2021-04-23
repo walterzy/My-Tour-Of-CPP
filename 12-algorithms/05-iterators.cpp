@@ -11,7 +11,7 @@ using std::list;
 
 // We can generalize the function find_all()
 //
-// The typename is needed to inform the compiler that C ’s iterator is supposed to be a
+// The typename is needed to inform the compiler that C’s iterator is supposed to be a
 // type and not a value of some type, say, the integer 7
 //
 // We can hide this implementation detail by introducing a type alias
@@ -35,7 +35,7 @@ vector<Iterator<C>> find_all(C& c, V v) {
 void test() {
     string m {"Mary had a little lamb"};
     for (auto p : find_all(m, 'a')) { // p is a string::iterator
-        if (*p!='a')
+        if (*p != 'a')
             cerr << "string bug!\n";
     }
     
@@ -54,7 +54,6 @@ void test() {
     for (auto p : find_all(vs, "green"))
         *p = "vert";
 }
-
 
 
 int main() {

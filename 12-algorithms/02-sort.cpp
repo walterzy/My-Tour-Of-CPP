@@ -1,11 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using std::cout;
 using std::string;
 using std::vector;
-
-
 
 class NamePhone {
 private:
@@ -38,14 +37,12 @@ bool operator>(const NamePhone& x, const NamePhone& y) {// less than
 }
 
 
-
 void print(const vector<NamePhone>& phone_book) {
     int i = 0;
     for (const auto& book : phone_book)
         cout << "[" << i++ << "] = {" << book.name() << ", " << book.phone() << "}\n";
     cout << "\n";
 }
-
 
 
 int main() {
@@ -69,7 +66,6 @@ int main() {
     std::sort(phone_book.begin(), phone_book.end(), std::greater<>());
     print(phone_book);
     cout << "\n";
-    
-    
+ 
     return 0;
 }

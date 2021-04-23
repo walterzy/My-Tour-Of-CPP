@@ -1,9 +1,8 @@
 #include <iostream>
+#include <algorithm>
 
 using std::cout;
 using std::string;
-
-
 
 // does s contain the character c?
 // PS: it could be other kind of types here
@@ -38,4 +37,3 @@ int main() {
     
     return 0;
 }
-
