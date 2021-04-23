@@ -2,7 +2,7 @@
 #include <iostream>
 #include <iterator>     // std::ostream_iterator
 
-std::ostream_iterator<string> oo {std::cout}; // wr ite str ings to cout
+std::ostream_iterator<std::string> oo {std::cout}; // write strings to cout
 
 int main()
 {
