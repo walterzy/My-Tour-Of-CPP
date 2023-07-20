@@ -16,6 +16,9 @@ int main() {
     std::cout << "*p = " << *p << "\n";
     std::cout << "*q = " << *q << "\n\n";
     
+    std::cout << "x = " << x << "\n";
+    std::cout << "y = " << y << "\n\n";
+    
     // A reference and a pointer both refer/point to an object and both are represented
     // in memory as machine address.
     // However, the language rules for using them differ.
@@ -42,6 +45,8 @@ int main() {
     r = 7;
     std::cout << "x = " << x << "\n";
     std::cout << "r = " << r << "\n";
+    std::cout << "y = " << y << "\n";
+    std::cout << "r2 = " << r2 << "\n\n";   
 
     return 0;
 }
