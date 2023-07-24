@@ -11,3 +11,7 @@ double sqrt_sum(Vector& v)
     return sum;
 }
 
+int main()
+{
+    return 0;
+}
