@@ -35,7 +35,7 @@ struct RecData {
 
 class Rectangle {
 private:
-    // ugly code. It it just an example to show the problems.
+    // ugly code. It is just an example to show the problems.
     RecData* data;
 
 public:
