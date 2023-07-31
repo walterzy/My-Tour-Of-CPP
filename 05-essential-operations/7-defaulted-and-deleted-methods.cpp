@@ -2,12 +2,11 @@
 
 using std::cout;
 
-// Text and codes based on the book: Stephen Prata, "C++ Primer Plus", 6th edition (2012), chapter 18;
-
+// Text and codes based on the book: Stephen Prata, "C++ Primer Plus", 
+// 6th edition (2012), chapter 18;
 
 // Now, suppose that we can prevent the compiler from using a particular method.
 // To do that, we add the `delete` keyword.
-
 
 class SomeClass {
 public:
@@ -31,7 +30,6 @@ public:
 };
 
 
-
 int main() {
     // What is the effect of disabling copy methods while enabling move methods?
     // Recall that an rvalue reference, such as used by move operations,
@@ -39,8 +37,10 @@ int main() {
     
     SomeClass one;
     SomeClass two;
-    SomeClass three(one); // not allowed, one an lvalue: error: call to deleted constructor of 'SomeClass'
-    SomeClass four(one + two); // allowed, expression is an rvalue (the operator+ generates a temporary object)
+    SomeClass three(one);   // not allowed, one an lvalue: 
+                            // error: call to deleted constructor of 'SomeClass'
+    SomeClass four(one + two);  // allowed, expression is an rvalue 
+                                // (the operator+ generates a temporary object)
     
     return 0;
 }

@@ -16,7 +16,8 @@ public:
         std::cout << "default constructor for Vector\n";
     }
     
-    // constructor: establish invariant (pre-conditions), acquire resources (e.g., allocations on heap)
+    // constructor: establish invariant (pre-conditions), 
+    // acquire resources (e.g., allocations on heap)
     explicit Vector(long size) {
         std::cout << "ordinary constructor for Vector\n";
         

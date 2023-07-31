@@ -2,8 +2,8 @@
 
 using std::cout;
 
-// Text and codes based on the book: Stephen Prata, "C++ Primer Plus", 6th edition (2012), chapter 18;
-
+// Text and codes based on the book: Stephen Prata, "C++ Primer Plus", 
+// 6th edition (2012), chapter 18;
 
 // Only the six special member functions can be defaulted (= default)
 //    SomeClass(parameter(s) of sometype(s)); // "ordinary constructor

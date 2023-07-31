@@ -17,13 +17,14 @@ public:
     
     // 'elegant' getters
     // ### const Member Functions (text excerpted from: Scott Meyers, "Effective C++ (2005)", Itens 3, )
-    // The purpose of 'const' on member functions is to identify which member functions may be invoked on `const objects`
+    // The purpose of 'const' on member functions is to identify which member functions may be invoked 
+    // on `const objects`
     // These functions cannot modify an object (its member data).
     // They are important for two reasons:
     // 1. It is important to know which functions may modify an object and which may not.
     // 2. They make it possible to work with 'const' objects, which is a critical aspect in effective C++ code
-    // when passing objects by reference-to-const. This technique is viable only if there are `const member functions`
-    // with which to manipulate the resulting const-qualified objects.
+    // when passing objects by reference-to-const. This technique is viable only if there are 
+    // `const member functions` with which to manipulate the resulting const-qualified objects.
     
     // Rule of Thumb: for any member function that does not modify the object, USE const.
     int x() const { return x_; }

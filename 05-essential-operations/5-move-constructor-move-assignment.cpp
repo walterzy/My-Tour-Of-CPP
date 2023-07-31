@@ -16,7 +16,8 @@ public:
         std::cout << "default constructor for Vector\n";
     }
     
-    // constructor: establish invariant (pre-conditions), acquire resources (e.g., allocations on heap)
+    // constructor: establish invariant (pre-conditions), 
+    // acquire resources (e.g., allocations on heap)
     explicit Vector(long size) {
         std::cout << "ordinary constructor for Vector\n";
         
@@ -97,7 +98,8 @@ public:
         for (int i = 0; i < size_; i++)
             res.elem_[i] = elem_[i] + v.elem_[i];
     
-        // since we defined a Move Assignment, the compiler know that it will be returned a temporary object,
+        // since we defined a Move Assignment, 
+        // the compiler know that it will be returned a temporary object,
         // then the Move Assignment is called automatically 
         // afterwards, it is destroyed
         return res;
@@ -167,7 +169,10 @@ int main() {
     r = x + y + z; // it calls the Move Assigment
     r.print();
 
-    std::cout << "s = foo()\n";
+    std::cout << "foo()\n";
+    foo(); // it calls the initializer-list constructor
+
+    std::cout << "\ns = foo()\n";
     Vector s = foo(); // there is a compilation optimization; the values are put directly in s;
                       // there is no calls for constructor, move/copy assigment, destroyer (for the temp object inside foo())
     s.print();
