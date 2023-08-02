@@ -11,11 +11,13 @@ using std::endl;
 
 
 // Since our own Vector container must store generic elements, we need to use a Template for it.
-// Since its generic elements can have any datatype (classes or built-in), we put all of its code only in the header,
-// due to the problems to compile Template codes in separated files (.h and .cpp).
+// Since its generic elements can have any datatype (classes or built-in), we put all of 
+// its code only in the header, due to the problems to compile Template codes in 
+// separated files (.h and .cpp).
 //
-// If our Vector was designed to deal with just a few dataypes, we could separated the declarations and definitions
-// in a header and source file, respectively, and then indicate these dataypes in the source file:
+// If our Vector was designed to deal with just a few dataypes, we could separated the 
+// declarations and definitions in a header and source file, respectively, 
+// and then indicate these dataypes in the source file:
 // e.g:
 // template class Vector<int>;
 // template class Vector<double>;
@@ -148,8 +150,9 @@ public:
     }
     
     
-    // With the begin() and end() functions below, we can now iterate over our container with range-for (see test2.cpp)
-    // Since these functions returns the address for an internal data (resource handle), we need to have their versions
+    // With the begin() and end() functions below, we can now iterate over our container 
+    // with range-for (see test2.cpp) Since these functions return the address for 
+    // an internal data (resource handle), we need to have their versions
     // for const and non-const objects
     
     // without this version, const objects could modify the internal data.
@@ -168,7 +171,8 @@ public:
     // iterators
     const T* end() const {
         cout << "const T* end() const\n";
-        return size_ ? &elem_[size_] : nullptr; // pointer to one-past-last element (next address after the last element)
+        return size_ ? &elem_[size_] : nullptr; // pointer to one-past-last element 
+                                                // (next address after the last element)
     }
     
 
@@ -181,8 +185,8 @@ public:
     
     
     // We do not have a setters for size, because this is non-sense and dangerous.
-    // The user could change the size of the Vector (i.e., its private data member size), but its array has
-    // a different number of elements allocated.
+    // The user could change the size of the Vector (i.e., its private data member size), 
+    // but its array has a different number of elements allocated.
     int size() const {
         return size_;
     }

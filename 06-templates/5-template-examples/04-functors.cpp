@@ -6,8 +6,9 @@ using std::endl;
 // Text based on the book: Stephen Prata, "C++ Primer Plus", 6th edition (2012), chapter 16
 //
 // A Functor (Function Objects) is any object that can be used with () in the manner of a function.
-// This includes normal function names, pointers to functions, and class objects for which the () operator is overloaded
-// that is, classes for which the peculiar-looking function operator()() is defined.
+// This includes normal function names, pointers to functions, and class objects for which 
+// the () operator is overloaded that is, classes for which the peculiar-looking function 
+// operator()() is defined.
 //
 // Example of a Class to represent a line on a 2D space
 class Linear {

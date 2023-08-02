@@ -43,8 +43,10 @@ template<typename T, typename T2>
 template<typename T>
 void testing()
 {
+    std::cout << "enter testing: " << std::endl;
     static_assert(Assignable<T&,double>, "can't assign a double");
     static_assert(Assignable<T&,std::string>, "can't assign a string");
+    std::cout << "leave testing: " << std::endl;
 }
 
 template<typename T>

@@ -33,8 +33,8 @@ int main() {
     std::vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     
     // The STL `count_if` function applies a given function (3rd argument) to all elements
-    // from a container, in a specific range (1st and 2nd arguments), and counts the number of
-    // trues returned by the function.
+    // from a container, in a specific range (1st and 2nd arguments), and counts the number 
+    // of trues returned by the function.
     // We can use a specific function or a Functor
     
     // counts how many numbers are divisive by 2
@@ -56,12 +56,12 @@ int main() {
     // Create a specific function for each possibility is impracticable.
     // Moreover, its definition can be located possibly quite far from its use.
     //
-    // Functors can be pretty good because a class, including a functor class, can be defined inside a function,
-    // so the definition can be located close to the point of use.
+    // Functors can be pretty good because a class, including a functor class, can be 
+    // defined inside a function, so the definition can be located close to the point of use.
     // It is flexible as well.
     //
-    // In terms of brevity, the functor code is more verbose: we have some code lines to define the class and
-    // we have to correctly instantiate its objects.
+    // In terms of brevity, the functor code is more verbose: we have some code lines to 
+    // define the class and we have to correctly instantiate its objects.
     //
     // SOLUTION:
     // Since we only need to use a simple and flexible function for this example,

@@ -1,17 +1,19 @@
 #include <iostream>
 
 using std::cout;
+using std::endl;
 
 
 // A template can be defined to accept an "arbitrary number of arguments of arbitrary types".
 // Such a template is called a VARIADIC TEMPLATE.
 //
 // Traditionally, implementing a variadic template has been to separate the "first argument"
-// from "the rest" and then "recursively" call the variadic template for the "tail of the arguments".
+// from "the rest" and then "recursively" call the variadic template for the 
+// "tail of the arguments".
 
 
-// Eventually, of course, tail will become empty, so we need the no-argument version of print() to deal with that.
-// What we do for no arguments: nothing
+// Eventually, of course, tail will become empty, so we need the no-argument version of 
+// print() to deal with that. What we do for no arguments: nothing
 void print() {
     cout << "\nprint() - no argmuments\n";
 }
@@ -21,8 +23,8 @@ void print() {
 // The typename ... indicates that Tail is a sequence of types.
 // The Tail... indicates that tail is a sequence of values of the types in Tail.
 // A parameter declared with a ... is called a "parameter pack".
-// Here, tail is a (function argument) parameter pack where the elements are of the types found in the
-// (template argument) parameter pack Tail.
+// Here, tail is a (function argument) parameter pack where the elements are of 
+// the types found in the (template argument) parameter pack Tail.
 // So, print() can take any number of arguments of any types.
 template <typename T, typename ... Tail>
 void print(T head, Tail ... tail) {
@@ -36,25 +38,32 @@ void print(T head, Tail ... tail) {
 
 
 
-// To avoid coding a print() without arguments, we could check in compilation-time if tail is empty.
-// C++17 provides the compilation-if (constexpr specifier declares that it is possible to evaluate the value
-// of the function or variable at compile time).
+// To avoid coding a print() without arguments, we could check in compilation-time 
+// if tail is empty. C++17 provides the compilation-if (constexpr specifier declares 
+// that it is possible to evaluate the value of the function or variable at compile time).
 template <typename T, typename ... Tail>
 void printCpp17(T head, Tail ... tail) {
     cout << "\nvoid printCpp17(T head, Tail ... tail)\n";
     
     cout << head << " ";
-    // If we don’t want to allow the zero-argument case, we can eliminate that print() using a compile-time if
+    // If we don’t want to allow the zero-argument case, we can eliminate that print() 
+    // using a compile-time if
     if constexpr(sizeof...(tail) > 0)
         print(tail...);
 }
 
 
 int main() {
+    cout << "1" << endl;
     print("hello", 1, 2.5, 3.0, "oi");
+
+    cout << "2" << endl;
     print();
+
+    cout << "3" << endl;
     printCpp17("hello", 1, 2.5, 3.0, "oi");
-    // printCpp17();
+
+    // printCpp17(); // no matching function
     
     return 0;
 }

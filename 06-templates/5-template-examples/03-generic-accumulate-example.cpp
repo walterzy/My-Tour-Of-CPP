@@ -34,7 +34,8 @@ Value sum(const Container& cont, Value v) {
 
 int main() {
     // Note that a range-for is performed inside function sum()
-    // This only works because we defined the functions begin() and end() for non-const and const objects.
+    // This only works because we defined the functions begin() and end() for non-const 
+    // and const objects.
     Vector<int> vi{1, 2, 7};
     cout << "sum(vi, 0) = " << sum(vi, 0) << "\n\n";
     

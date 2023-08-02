@@ -29,11 +29,9 @@ public:
     ~Vector() {
         delete[] elem_;
     }
-    
-    
+        
     // ... copy and move operators ...
-    
-    
+        
     T& operator[](int i) const;
 };
 

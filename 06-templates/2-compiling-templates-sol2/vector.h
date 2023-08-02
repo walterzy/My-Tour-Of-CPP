@@ -34,10 +34,11 @@ public:
 };
 
 
-// We include here all definitions/implementations, then it is just a "cleaner" way to have all definitions in the
+// We include here all definitions/implementations, 
+// then it is just a "cleaner" way to have all definitions in the
 // header file, as the SOLUTION #1.
-// IMPORTANT: The source file CANNOT be listed for compilation in the Makefile/CMake, otherwise we will have
-// compilation errors about function redefinitions (see CmakeLists.txt)
+// IMPORTANT: The source file CANNOT be listed for compilation in the Makefile/CMake, 
+// otherwise we will have compilation errors about function redefinitions (see CmakeLists.txt)
 #include "vector.cpp"
 
 

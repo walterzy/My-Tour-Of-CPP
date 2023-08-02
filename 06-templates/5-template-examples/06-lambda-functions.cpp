@@ -7,7 +7,8 @@ using std::endl;
 
 // Codes based on the book: Stephen Prata, "C++ Primer Plus", 6th edition (2012), chapter 18
 
-// A Functor whose operator() checks if a given X is divisive by a pre-defined divisor (defined in the constructor)
+// A Functor whose operator() checks if a given X is divisive by a pre-defined divisor 
+// (defined in the constructor)
 class f_mod {
 private:
     int dv_;
@@ -42,8 +43,8 @@ int main() {
     int count3_by_lambda = std::count_if(v.begin(), v.end(), [](int x) {return x % 3 == 0;});
     cout << "count3_by_lambda = " << count3_by_lambda << endl << endl;
         
-    // In terms of brevity, the functor code is more verbose than the equivalent function or lambda code.
-    // Functions and lambdas are approximately equally brief.
+    // In terms of brevity, the functor code is more verbose than the equivalent function 
+    // or lambda code. Functions and lambdas are approximately equally brief.
     // One apparent exception would be if you had to use a lambda twice:
     int count5_by_lambda = std::count_if(v.begin(), v.end(), [](int x) {return x % 5 == 0;});
     int count5_by_lambda_again = std::count_if(v.begin(), v.end(), [](int x) {return x % 5 == 0;});
@@ -61,14 +62,17 @@ int main() {
     
     // Thus, we even can use this no-longer-anonymous lambda as an ordinary function:
     bool result = lambda_mod7(10); // result is true if 10 % 7 == 0
+    cout << "resut = " << result << endl << endl;
         
-    // We still can use auto for the parameter datatypes, so that the lambda function becomes more generic
+    // We still can use auto for the parameter datatypes, so that the lambda function
+    // becomes more generic
     // PS: it does not make sense for this problem, but it is just an example of how to use auto
     auto lambda_mod8 = [](auto x){ return x % 8 == 0; };
+    cout << "lambda_mod8 = " << lambda_mod8(10) << endl << endl;
        
     // Unlike an ordinary function, however, a named lambda can be defined inside a function.
-    // The actual type for lambda_mod7 will be some implementation-dependent type that the compiler uses
-    // to keep track of lambdas.
+    // The actual type for lambda_mod7 will be some implementation-dependent type that 
+    // the compiler uses to keep track of lambdas.
     
     return 0;
 }

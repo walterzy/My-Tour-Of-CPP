@@ -11,16 +11,17 @@ void rangeForConstObjects(const Vector<T> &v) {
     cout << "rangeForConstObjects()" << endl;
     cout << "size = " << v.size() << endl;
     
-    // Range-for looping... it only works because Vector has implemented the functions begin() and end().
-    // Since v is already const, the range-for looping calls its begin() and end() for const objects.
-    // These functions return const T*.
+    // Range-for looping... it only works because Vector has implemented the functions 
+    // begin() and end(). Since v is already const, the range-for looping calls 
+    // its begin() and end() for const objects. These functions return const T*.
     // Therefore, the const below is unnecessary (optional).
     // But, for the sake of clarity, we left the const.
     //
     // This range-for calls: "const T* begin() const" and "const T* end() const" from Vector
     for (const auto& x : v) {
         cout << x << endl;
-         // x = 10; // it is not allowed... x is const (this is true due to const versions of begin() and end() from Vector
+         // x = 10; // it is not allowed... x is const 
+                    // (this is true due to const versions of begin() and end() from Vector
     }
     cout << "\n";
 }
@@ -42,7 +43,8 @@ int main() {
     cout << "rangeFor Non-Const Objects but Const Elements in For\n";
     for (const auto& x : vi) {
         cout << x << endl;
-        // x = 10; // it is not allowed... x is const (this is true due to const versions of begin() and end() from Vector
+        // x = 10; // it is not allowed... 
+                   // x is const (this is true due to const versions of begin() and end() from Vector
     }
     cout << "\n";
     cout << "--------------\n\n";

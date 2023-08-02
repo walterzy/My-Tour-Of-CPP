@@ -6,19 +6,22 @@
 
 
 int main() {
-    // Usually, we split declarations and definitions in header (.h) and source file (.cpp) separately.
-    // Then we compile the source file to generate an object file (.o)
-    // When compiling a new source file that uses the other one, we just use its object file (.o) and its header file (.h).
+    // Usually, we split declarations and definitions in header (.h) and 
+    // source file (.cpp) separately. Then we compile the source file to generate 
+    // an object file (.o) When compiling a new source file that uses the other one, 
+    // we just use its object file (.o) and its header file (.h).
     // Thus, the compiler does not know details about implementations during this compilation.
 
     // However, this does not work for Template classes/functions.
     
-    // To correctly compile/link a source file (like the current one) that uses/includes a header file with
-    // template functions, the compiler needs to know the both declarations and definitions during this compilation.
+    // To correctly compile/link a source file (like the current one) that uses/includes 
+    // a header file with template functions, the compiler needs to know the both 
+    // declarations and definitions during this compilation.
     // We have some solutions for that.
     
     // ### Solution 3 ###
-    // We put the definitions in a separated source file (.cpp) and then we include it into all files that use its functions.
+    // We put the definitions in a separated source file (.cpp) and then we include it into 
+    // all files that use its functions.
     // For the current source file, we have a #include "vector.cpp"
     // Thus, all content of vector.cpp is included here!
     // cons:
@@ -45,8 +48,7 @@ int main() {
     vs[0] = "A Tour of C++";
     std::cout << "vs[0] = " << vs[0] << std::endl;
     
-    Vector<std::list<int>> vli(45);
-    
+    Vector<std::list<int>> vli(45);    
     
     return 0;
 }
