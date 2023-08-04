@@ -5,7 +5,8 @@ using namespace std::literals;
 
 template<typename T>
 concept Hashable = requires(T a) {
-    { std::hash<T>{}(a) } -> std::size_t;
+    { std::hash<T>{}(a) } -> std::same_as<size_t>;
+    { std::hash<T>{}(a) } -> std::convertible_to<size_t>;
 };
 
 template<Hashable T>
@@ -26,18 +27,18 @@ Num sum(Seq s, Num v)
 
 template<typename T>
 concept Equality_comparable = requires (T a, T b) {
-    { a == b } -> bool; // compare Ts with ==
-    { a != b } -> bool; // compare Ts with !=
+    { a == b } -> std::same_as<bool>; // compare Ts with ==
+    { a != b } -> std::same_as<bool>; // compare Ts with !=
 };
 
 struct S { int a; };
 
 template<typename T, typename T2 = T>
 concept Equality_comparable2 = requires (T a, T2 b) {
-    { a == b } -> bool; // compare a T to a T2 with ==
-    { a != b } -> bool; // compare a T to a T2 with !=
-    { b == a } -> bool; // compare a T2 to a T with ==
-    { b != a } -> bool; // compare a T2 to a T with !=
+    { a == b } -> std::same_as<bool>; // compare a T to a T2 with ==
+    { a != b } -> std::same_as<bool>; // compare a T to a T2 with !=
+    { b == a } -> std::same_as<bool>; // compare a T2 to a T with ==
+    { b != a } -> std::same_as<bool>; // compare a T2 to a T with !=
 };
 
 // template<typename C>

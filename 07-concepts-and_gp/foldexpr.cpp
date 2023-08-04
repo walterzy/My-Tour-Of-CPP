@@ -47,6 +47,7 @@ int main()
 {
     std::cout << sum(1,3,5) << std::endl;
     std::cout << sum2(1,3,5) << std::endl;
+    std::cout << sum('a',2.4,sum(1,2,3,4,5)) << std::endl;
 
     print("Hello!", ' ', "World ", 2021);
     // (((((std::cout << "Hello!") << ’ ’) << "World ") << 2021) << ’\n’);
