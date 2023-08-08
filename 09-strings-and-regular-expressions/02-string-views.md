@@ -1,5 +1,5 @@
 A **string_view** is basically a (pointer, length) pair denoting a sequence of characters.
-It gives access to a *contiguous sequence *of characters.
+It gives access to a *contiguous sequence* of characters.
 
 The characters can be stored in many possible ways, including:
   - std::string;

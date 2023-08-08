@@ -36,7 +36,7 @@ int main() {
     cout << "last_name1_again = " << last_name1_again << endl;
     
     // there are a lot of other useful functions for strings
-    auto addr = compose("dmr","bell−labs.com");
+    auto addr = compose("dmr","bell-labs.com");
     cout << addr << endl;
 
     string name = "Niels Stroustrup";
@@ -49,5 +49,13 @@ int main() {
     auto s1 = "Cat"s;
     auto p1 = "Dong";
 
+    cout << "s1 = " << s1 << endl;
+    cout << "p1 = " << p1 << endl;
+
+    s1.replace(0,2,"TMP");
+    cout << "s1 = " << s1 << endl;
+
+    s1 = p1;
+    
     return 0;
 }

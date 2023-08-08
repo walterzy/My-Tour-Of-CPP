@@ -14,7 +14,7 @@ void use()
     std::ifstream in("file.txt"); // input file
     if (!in) // check that the file was opened
         std::cerr << "no file\n";
-    regex pat {R"(\w{2}\s∗\d{5}(−\d{4})?)"}; // U.S. postal code pattern
+    regex pat {R"(\w{2}\s*\d{5}(-\d{4})?)"}; // U.S. postal code pattern
     int lineno = 0;
     for (string line; getline(in, line); ) {
         ++lineno;
@@ -34,15 +34,36 @@ bool is_identifier(const string& s)
     // regex pat {"[_[:alpha:]]\\w∗"}; // underscore or letter
     // followed by zero or more underscores, letters, or digits
 
-    regex pat {R"([_[:alpha:]]\w∗)"};
+    regex pat {R"([_[:alpha:]]\w*)"};
+    return regex_match(s,pat);
+}
+
+
+bool is_vowel(const string& s)
+{
+    regex pat {R"([a^eiouy])"}; 
+    return regex_match(s,pat);
+}
+
+
+bool is_not_vowel(const string& s)
+{
+    //regex pat {R"([^aeiouy])"}; 
+    regex pat {"[^aeiouy]"}; 
     return regex_match(s,pat);
 }
 
 int main() {
-    regex pat {R"(\w{2}\s*\d{5}(−\d{4})?)"}; 
+    regex pat {R"(\w{2}\s*\d{5}(-\d{4})?)"}; 
     // U.S. postal code pattern: XXddddd-dddd and var iants
 
     // regex pat {R"(^A*B+C?$)"}; 
+
+    use();
+    cout << "^ is vowel? " << is_vowel("^") << endl;
+    cout << "e is vowel? " << is_vowel("e") << endl;
+    cout << "z is vowel? " << is_vowel("z") << endl;
+    cout << "z is not vowel? " << is_not_vowel("z") << endl;
 
     int lineno = 0;
     for (string line; getline(std::cin, line); ) { // read into line buffer

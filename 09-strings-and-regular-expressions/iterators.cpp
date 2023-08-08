@@ -11,7 +11,7 @@ using namespace std::literals::string_literals;
 
 void test()
 {
-    string input = "aa as; asd ++eˆasdf asdfg";
+    string input = "aa as; asd ++e^asdf asdfg";
     regex pat {R"(\s+(\w+))"};
     for (std::sregex_iterator p(input.begin(), input.end(), pat); p != std::sregex_iterator{}; ++p)
             cout << (*p)[1] << '\n';

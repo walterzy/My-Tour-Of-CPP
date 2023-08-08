@@ -1,0 +1,3 @@
+This function reads a file looking for U.S. postal codes, such as TX77845 
+and DC 20500-0001. An smatch type is a container of regex results. Here, matches[0] is the whole pattern and matches[1] is the optional four-digit subpattern (-\d{4})?.
+
