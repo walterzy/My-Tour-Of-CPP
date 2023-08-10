@@ -13,6 +13,7 @@ void test()
     std::ostringstream oss;
     oss << "{temperature," << std::scientific << 123.4567890 << "}";
     cout << oss.str() << '\n';
+    cout << oss.view() << '\n';
 }
 
 template<typename Target = string, typename Source = string>
