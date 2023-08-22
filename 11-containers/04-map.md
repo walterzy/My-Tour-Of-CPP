@@ -16,7 +16,7 @@ int get_number(const string& s) {
 ```
 
 - `map` is essentially the **lookup** we called the function above `get_number()`
-- If a key isn’t found, it is entered into the map with a **default value** for its value
+- If a key isn't found, it is entered into the map with a **default value** for its value
 - The **default value** for an *integer type* is 0;
 
 - The cost of a map lookup is *O(log(n))* where n is the number of elements in the map.

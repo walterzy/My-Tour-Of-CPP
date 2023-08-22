@@ -3,7 +3,7 @@
 - However, for people who care about memory sizes and run-time performance this is **critical**.
 
 - If you have a *class hierarchy* that relies on `virtual` functions to get polymorphic behavior
-- or if you class is considerably large
+- or if your class is considerably large
 - **DO NOT store objects directly in a container.**
 - Instead, store a pointer (or a smart pointer;).
 

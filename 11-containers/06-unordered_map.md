@@ -4,7 +4,7 @@
 - STL provides a *default hash function* for `strings` as well as for other built-in and standard-library types.
 - If necessary, you can provide your own.
 
-- Possibly, the most common need for a *“custom” hash function* comes when we want an **unordered container** of one of our own types.
+- Possibly, the most common need for a *"custom" hash function* comes when we want an **unordered container** of one of our own types.
 - A *hash function* is often provided as a **function object (functor)**
 
 ```

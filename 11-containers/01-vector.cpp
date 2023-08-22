@@ -6,8 +6,8 @@ using std::string;
 using std::vector;
 
 // A class with the main purpose of holding objects is commonly called a "container".
-// Providing suitable containers for a given task and supporting them with useful fundamental operations
-// are important steps in the construction of any program.
+// Providing suitable containers for a given task and supporting them with useful 
+// fundamental operations are important steps in the construction of any program.
 
 // #### STL vector ####
 //
@@ -57,7 +57,8 @@ int main() {
     phone_book3 = phone_book1;
     
     // push_back: adds a new element at the end of a vector, increasing its size by one.
-    // The standard-library vector is implemented so that growing a vector by repeated push_back()s is efficient.
+    // The standard-library vector is implemented so that growing a vector by repeated 
+    // push_back()s is efficient.
     // #### When we insert a new element, its value is copied into the container.
     //
     NamePhone book_jose = {"Jose Antonio", 3333};
@@ -65,7 +66,7 @@ int main() {
     // copies the content of book_jose into the container
     phone_book2.push_back(book_jose);
     
-    // An emplace operation takes arguments for an element’s constructor and builds the object in a
+    // An emplace operation takes arguments for an element's constructor and builds the object in a
     // newly allocated space in the container, rather than copying an object into the container.
     phone_book3.emplace_back("Pedro Silva", 6666);
     
@@ -84,7 +85,3 @@ int main() {
     
     return 0;
 }
-
-
-
-

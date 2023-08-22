@@ -62,5 +62,9 @@ int main()
     std::format_to(back_inserter(buf), "iterator: {} {}\n", "Hi! ", 2022);
     cout << buf; // iterator: Hi! 2022
 
+	char fwVer[8] = {0};
+    std::sprintf(fwVer, "V%02X%02X%02X", 0, 0, 3);
+    cout << std::string(fwVer) << endl;
+
     return 0;
 }
