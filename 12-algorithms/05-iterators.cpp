@@ -11,7 +11,7 @@ using std::list;
 
 // We can generalize the function find_all()
 //
-// The typename is needed to inform the compiler that C’s iterator is supposed to be a
+// The typename is needed to inform the compiler that C's iterator is supposed to be a
 // type and not a value of some type, say, the integer 7
 //
 // We can hide this implementation detail by introducing a type alias

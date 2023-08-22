@@ -14,7 +14,7 @@ int main ()
     std::cout << "c's type = " << typeid(c).name() << std::endl;
     for (auto p = str.begin(); p != str.end(); ++p)
         if (*p == c)
-            std::cout << "found " << c;
+            std::cout << "found " << c << std::endl;
 
   return 0;
 }

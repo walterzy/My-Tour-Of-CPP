@@ -6,7 +6,7 @@
 - `for_each()`: Applies a nonmodifying function object to each element in a range.
 - `find()`: Finds the first occurrence of a value in a range.
 - `find_if()`: Finds the first value that satisfies a predicate test criterion in a range.
-- `find_if_not()`: Finds the first value that doesn’t satisfy a predicate test criterion in a range. (C++11)
+- `find_if_not()`: Finds the first value that doesn't satisfy a predicate test criterion in a range. (C++11)
 - `find_end()`: Finds the last occurrence of a subsequence whose values match the values of a second sequence. Matching may be by equality or by applying a binary predicate.
 - `find_first_of()`: Finds the first occurrence of any element of a second sequence that matches a value in the first sequence. Matching may be by equality or may be evaluated with a binary predicate.
 - `adjacent_find()`: Finds the first element that matches the element immediately follow- ing it. Matching may be by equality or may be evaluated with a binary predicate.
@@ -50,7 +50,7 @@
 - `random_shuffle()`: Randomly rearranges the elements in a range.
 - `shuffle()`: Randomly rearranges the elements in a range using a function object type satisfying C++11 requirements for a uniform random generator. (C++11)
 - `is_partitioned()`: Returns true if a range is partitioned by a given predicate.
-- `partition()`: Places all the elements that satisfy a predicate function object before all elements that don’t.
-- `stable_partition()`: Places all the elements that satisfy a predicate function object before all elements that don’t. The relative order of elements in each group is preserved.
+- `partition()`: Places all the elements that satisfy a predicate function object before all elements that don't.
+- `stable_partition()`: Places all the elements that satisfy a predicate function object before all elements that don't. The relative order of elements in each group is preserved.
 - `partition_copy()`: Copies all the elements that satisfy a predicate function object to one output range and the remaining elements to a second output range. (C++11)
 - `partition_point()`: For a range partitioned by a given predicate, returns an iterator to the first element not satisfying the predicate.

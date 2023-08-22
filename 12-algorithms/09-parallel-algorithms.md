@@ -1,6 +1,6 @@
 ### Parallel Algorithms
 - **parallel execution**: tasks are done on multiple threads (often running on several processor cores)
-- **vectorized execution**: tasks are done on a single thread using vectorization, also known as SIMD (“Single Instruction, Multiple Data”).
+- **vectorized execution**: tasks are done on a single thread using vectorization, also known as SIMD ("Single Instruction, Multiple Data").
 
 STL offers support for *both* and we can be specific about wanting sequential execution; in `<execution>`, we find:
 - `seq`: sequential execution
