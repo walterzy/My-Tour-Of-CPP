@@ -1,11 +1,11 @@
 ### Resource Management
 
-- To work with objects allocated in the *free store*, STL provides two *“smart pointers”* to help
+- To work with objects allocated in the *free store*, STL provides two *"smart pointers"* to help
 manage objects (automatically deallocation):
 - `unique_ptr` to represent unique ownership
 - `shared_ptr` to represent shared ownership
 
-The most basic use of these *“smart pointers”* is to **prevent memory leaks** caused by
+The most basic use of these *"smart pointers"* is to **prevent memory leaks** caused by
 careless programming (lack of deallocating the objects on free store).
 
 ```
@@ -67,7 +67,7 @@ an object using `new` and then passing it to a `shared_ptr`
     - **prefer containers and other types that manage their resources at a higher conceptual level.**
     
 
-Where do we use *“smart pointers”* (such as `unique_ptr`) rather than resource handles with operations designed
+Where do we use *"smart pointers"* (such as `unique_ptr`) rather than resource handles with operations designed
 specifically for the resource?
 - When we share an object, we need pointers (or references) to refer to the shared object,
 so a `shared_ptr` becomes the obvious choice (unless there is an obvious single owner).

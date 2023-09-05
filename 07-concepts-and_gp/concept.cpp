@@ -1,7 +1,9 @@
+#include <concepts>
 #include <iostream>
 #include <string>
 
 using namespace std::literals;
+using namespace std::ranges;
 
 template<typename T>
 concept Hashable = requires(T a) {
@@ -41,20 +43,32 @@ concept Equality_comparable2 = requires (T a, T2 b) {
     { b != a } -> std::same_as<bool>; // compare a T2 to a T with !=
 };
 
-// template<typename C>
-// using Value_type = typename C::value_type; // the type of C’s elements
-// using Iterator_type = typename C::iterator_type; // the type of C’s elements
+template<class S>
+using Value_type = typename S::value_type; // the type of C's elements
+//using Iterator_type = typename S::iterator_type; // the type of C's iterator
 
-// template<typename S>
-// concept Sequence = requires(S a) {
-//     typename Value_type<S>; // S must have a value type.
-//     typename Iterator_type<S>; // S must have an iterator type.
-//     { begin(a) } -> Iterator_type<S>; // begin(a) must return an iterator
-//     { end(a) } -> Iterator_type<S>; // end(a) must return an iterator
-//     requires Same_type<Value_type<S>,Value_type<Iterator_type<S>>>;
-//     requires Input_iterator<Iterator_type<S>>;
-// };
 
+template<typename T, typename U = T>
+concept Number =
+    requires(T x, U y) { // Something with arithmetic operations and a zero
+        x + y; x - y; x * y; x / y;
+        x += y; x -= y; x *= y; x /= y;
+        x = x; // copy
+        x = 0;
+};
+
+template<typename T, typename U = T>
+concept Arithmetic = Number<T,U> && Number<U,T>;
+
+template<typename S>
+concept Sequence = requires (S a) {
+    typename range_value_t<S>; // S must have a value type
+    typename iterator_t<S>; // S must have an iterator typ
+    { a.begin() } -> std::same_as<iterator_t<S>>; // S must have a begin() that returns an iterator
+    { a.end() } -> std::same_as<iterator_t<S>>;
+    requires std::input_iterator<iterator_t<S>>; // S's iterator must be an input_iterator
+    requires std::same_as<range_value_t<S>, std::iter_value_t<S>>;
+};
 
 int main() {
     f("abc"s);
@@ -62,7 +76,7 @@ int main() {
     
     static_assert(Equality_comparable<int>);
 
-    // fails because structs don’t automatically get == and !=
+    // fails because structs don't automatically get == and !=
     //static_assert(Equality_comparable<S>);
 
     static_assert(Equality_comparable2<int,double>); // succeeds
