@@ -22,6 +22,6 @@ any compose_message(istream& s)
 int main()
 {
     auto m = compose_message(cin);
-    string& s = any_cast<string &>(m);
+    string s = any_cast<string>(m);
     cout << s;
 }
