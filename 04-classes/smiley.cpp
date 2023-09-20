@@ -137,3 +137,15 @@ void user()
         delete p;
 }
 
+
+void draw_all(vector<Shape *> & v)
+{
+    for_each(v.begin(), v.end(), [](Shape * p) { p->draw(); });
+}
+
+
+void draw_all(vector<Shape *> & v)
+{
+    for_each(v.begin(), v.end(), mem_fn(&Shape::draw));
+}
+
