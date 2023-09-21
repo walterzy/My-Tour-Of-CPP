@@ -78,7 +78,8 @@
         "bitset": "cpp",
         "functional": "cpp",
         "ranges": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "source_location": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
