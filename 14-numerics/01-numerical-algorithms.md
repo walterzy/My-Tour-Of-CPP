@@ -1,6 +1,5 @@
 ### Mathematical Functions
-In `<cmath>`, we find the standard mathematical functions , such as `sqrt()`, `log()`, and `sin()` for
-arguments of type `float`, `double`, and `long double``
+In `<cmath>`, we find the standard mathematical functions , such as `sqrt()`, `log()`, and `sin()` for arguments of type `float`, `double`, and `long double``
 
 ### Numerical Algorithms
 - `x = accumulate(b, e, i)`: `x` is the sum of `i` and the elements of `[b : e)`
