@@ -16,11 +16,11 @@ int main()
     v1 = -1; // (3) from a scalar 
     print("assigned from scalar: ", v1);
  
-    v1 = {1, 2, 3, 4, 5, 6}; // (8): from initializer list of different size
+    v1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}; // (8): from initializer list of different size
     print("assigned from initializer_list:", v1);
  
-    std::valarray<int> v2(3);
-    v2 = v1[std::slice(0, 3, 2)]; // (4): from slice array
+    std::valarray<int> v2(4);
+    v2 = v1[std::slice(0, 4, 3)]; // (4): from slice array
     print("every 2nd element starting at pos 0:", v2);
  
     v2 = v1[v1 % 2 == 0]; // (6): from mask array
