@@ -80,7 +80,20 @@
         "ranges": "cpp",
         "set": "cpp",
         "source_location": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "future": "cpp",
+        "any": "cpp",
+        "cinttypes": "cpp",
+        "condition_variable": "cpp",
+        "deque": "cpp",
+        "execution": "cpp",
+        "coroutine": "cpp",
+        "resumable": "cpp",
+        "numbers": "cpp",
+        "queue": "cpp",
+        "shared_mutex": "cpp",
+        "syncstream": "cpp",
+        "valarray": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
