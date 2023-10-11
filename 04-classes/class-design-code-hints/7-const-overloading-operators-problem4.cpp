@@ -34,7 +34,8 @@ public:
     }
     
     
-    // SOLUTION: overloading this operator (with the same code) twice: one for const object and one for non-const objects
+    // SOLUTION: overloading this operator (with the same code) twice: one for const object 
+    // and one for non-const objects
     // Thus, we can use the operator[] without problems (see main and function foo())
     const double& operator[](int i) const { // for const objects
         return elem_[i];

@@ -37,7 +37,8 @@ public:
     // SOLUTION: the same of example 3-solution-to-return-handles-to-object-internals.cpp
     // Add `const` to its return type
     // Now, this functions becomes read-only for const objects.
-    // PROBLEM: non-const objects cannot modify the element anymore... and we really want to do that for this case
+    // PROBLEM: non-const objects cannot modify the element anymore... 
+    // and we really want to do that for this case
     // we have a compilaton error
     const double& operator[](int i) const {
         return elem_[i];

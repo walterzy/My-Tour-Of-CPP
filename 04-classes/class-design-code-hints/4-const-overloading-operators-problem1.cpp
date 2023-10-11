@@ -2,7 +2,8 @@
 #include <stdexcept>    // std::length_error
 #include <algorithm>    // std::copy
 
-//using std::cout, std::endl; // use of multiple declarations in a single using declaration is a C++17 feature
+//using std::cout, std::endl; 
+// use of multiple declarations in a single using declaration is a C++17 feature
 using std::cout;
 using std::endl;
 

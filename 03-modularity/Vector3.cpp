@@ -5,7 +5,7 @@ class Vector {
 public:
     Vector(int s);
     double & operator[](int i);
-    int size();
+    int size() const;
 private:
     double * elem;  // elem points to an array of sz doubles
     int sz;
@@ -26,12 +26,12 @@ double & Vector::operator[](int i)
     return elem[i];
 }
 
-int Vector::size() {return sz;}
+int Vector::size() const {return sz;}
 
-/*
+
 int size(const Vector & v) {return v.size();}
 
-bool operator==(const Vector& v1, const Vector& v2)
+bool operator==(Vector& v1, Vector& v2)
 {
     if (v1.size() != v2.size())
         return false;
@@ -42,7 +42,7 @@ bool operator==(const Vector& v1, const Vector& v2)
 
     return true;
 }
-*/
+
 
 void user(int sz) noexcept
 {
