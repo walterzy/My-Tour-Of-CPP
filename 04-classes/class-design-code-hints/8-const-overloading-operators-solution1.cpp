@@ -65,17 +65,17 @@ public:
     // - reinterpret_cast<T>(expression)
     // - static_cast<T>(expression)
 
-    // Each serves a distinct purpose:
+    // Each serves a distinct purpose of *_cast:
     // - const_cast is typically used to cast away the constness of objects. 
     //      It is the only C++-style cast that can do this.
-    // - dynamic_cast is primarily used to perform 鈥渟afe downcasting,鈥� i.e., 
+    // - dynamic_cast is primarily used to perform "safe downcasting", 
     //      to determine whether an object is of a particular type in an inheritance hierarchy. 
     //      It is the only cast that cannot be performed using the old-style syntax. 
     //      It is also the only cast that may have a significant runtime cost. 
-    //      (I鈥檒l provide details on this a bit later.)
+    //      (I'll provide details on this a bit later.)
     // - reinterpret_cast is intended for low-level casts that yield implementation-dependent 
     //      (i.e., unportable) results, e.g., casting a pointer to an int. Such casts should be rare outside 
-    //      low-level code. I use it only once in this book, and that鈥檚 only when discussing how you might 
+    //      low-level code. I use it only once in this book, and that's only when discussing how you might 
     //      write a debugging allocator for raw memory (see Item 50).
     // - static_cast can be used to force implicit conversions (e.g., non-const object to const object 
     //      (as in Item 3), int to double, etc.). 

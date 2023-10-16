@@ -1,5 +1,4 @@
 
-#include <iostream>
 #include <iostream>     // std::cerr
 #include <stdexcept>    // std::length_error
 #include <algorithm>    // std::copy
@@ -59,7 +58,6 @@ public:
     }
     
     
-    
     // copy constructor
     Vector(const Vector& v) : elem_{new double[v.size_]}, size_{v.size_} {
         std::cout << "Copy Constructor for Vector\n";
@@ -86,8 +84,7 @@ public:
         return *this;
     }
     
-    
-    
+        
     Vector operator+(const Vector& v) const {
         std::cout << "operator+\n";
     
@@ -107,8 +104,8 @@ public:
     
     
     // Move Constructor
-    // it does not take a const argument: after all, a move constructor is supposed to remove the
-    // value from its argument.
+    // it does not take a const argument: after all, a move constructor is supposed to 
+    // remove the value from its argument.
     Vector(Vector&& v) :
             elem_{v.elem_}, // "grab the elements" from v: elem_ now points to v.elem_
             size_{v.size_}
@@ -135,17 +132,16 @@ public:
             // Mark the v object as "empty"
             v.elem_ = nullptr; // now v has no elements
             v.size_ = 0;
-            
-//            return *this;
         }
+
         return *this;
     }
 };
 
 
 Vector foo() {
-    // since we defined a Move Assignment, the compiler know that it will be returned a temporary object,
-    // then the Move Assignment is called automatically
+    // since we defined a Move Assignment, the compiler know that it will be returned 
+    // a temporary object, then the Move Assignment is called automatically
     // afterwards, it is destroyed
     return Vector{-1, -1, -1};
 }
@@ -153,7 +149,7 @@ Vector foo() {
 
 int main() {
     std::cout << "x\n";
-    Vector x = {1, 2, 3};
+    Vector x{1, 2, 3};
     x.print();
     
     std::cout << "y\n";
@@ -164,8 +160,8 @@ int main() {
     Vector z = {100, 200, 300};
     z.print();
     
-    std::cout << "r = x + y + z\n";
     Vector r;
+    std::cout << "r = x + y + z\n";
     r = x + y + z; // it calls the Move Assigment
     r.print();
 
@@ -174,7 +170,8 @@ int main() {
 
     std::cout << "\ns = foo()\n";
     Vector s = foo(); // there is a compilation optimization; the values are put directly in s;
-                      // there is no calls for constructor, move/copy assigment, destroyer (for the temp object inside foo())
+                      // there is no calls for constructor, move/copy assigment, destroyer 
+                      // (for the temp object inside foo())
     s.print();
     
     std::cout << "t = foo()\n";

@@ -3,6 +3,9 @@
 //
 #include <vector>
 #include <iostream>
+#include <memory>
+
+using namespace std;
 
 class Point {
 private:
@@ -74,7 +77,7 @@ public:
 
     void add_eye(Shape* s)
     {
-        eyes.push_back(s);
+        eyes.push_back(unique_ptr<Shape> s);
     }
 
     void set_mouth(Shape* s);
@@ -82,8 +85,8 @@ public:
     // ...
 
 private:
-    vector<unique_ptr<Shape>> eyes; // usually two eyes
-    unique_ptr<Shape> mouth;
+    std::vector<unique_ptr<Shape>> eyes; // usually two eyes
+    std::unique_ptr<Shape> mouth;
 };
 
 
@@ -149,3 +152,7 @@ void draw_all(vector<Shape *> & v)
     for_each(v.begin(), v.end(), mem_fn(&Shape::draw));
 }
 
+int main()
+{
+
+}
